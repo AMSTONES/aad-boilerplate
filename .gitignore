@@ -1,0 +1,35 @@
+# Application
+public_html/app/plugins/*
+!public_html/app/plugins/.gitkeep
+public_html/app/mu-plugins/*/
+public_html/app/upgrade
+public_html/app/uploads/*
+!public_html/app/uploads/.gitkeep
+public_html/app/wflogs
+
+# Allow specific plugins in git
+# example: !public_html/app/plugins/ninja-forms-uploads
+
+# Compiled files
+public_html/app/themes/*/*.css
+public_html/app/themes/*/assets/lib/*.min.js
+public_html/app/themes/*/assets/lib/*.map
+
+# WordPress
+public_html/admin
+public_html/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+/.idea
+scss/.sass-cache
+.DS_Store
+
+# Composer
+/vendor
+node_modules
+
+# WP-CLI
+wp-cli.local.yml

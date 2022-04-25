@@ -1,0 +1,16 @@
+version: 2
+registries:
+  repman-composer:
+    type: composer-repository
+    url: https://andanotherday.repo.repman.io
+    username: token
+    password: ${{secrets.REPMAN_TOKEN}}
+updates:
+- package-ecosystem: "composer"
+  directory: "/"
+  registries: 
+    - repman-composer
+  schedule:
+    interval: daily
+  target-branch: "feature/adding-support-for-es6"
+  open-pull-requests-limit: 10

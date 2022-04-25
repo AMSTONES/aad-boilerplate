@@ -1,0 +1,61 @@
+{
+  "name": "andanotherday/wordpress-bedrock-boilerplate",
+  "type": "package",
+  "license": "MIT",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://github.com/andanotherday/wordpress-bedrock-boilerplate",
+  "keywords": [
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+  ],
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": [
+    { "type": "composer", "url": "https://wpackagist.org" },
+    { "type": "composer", "url": "https://andanotherday.repo.repman.io" }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "composer/installers": "^1.4",
+    "vlucas/phpdotenv": "5.4.1",
+    "oscarotero/env": "2.1.0",
+    "roots/wordpress": "5.4.1",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "roots/multisite-url-fixer": "^1.1",
+
+    "bostondv/acf-ninja-forms": "1.0.4",
+
+    "andanotherday/advanced-custom-fields-pro": "5.11.4",
+    
+    "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "2.3.0",
+    "wpackagist-plugin/advanced-custom-fields-font-awesome": "3.1.2",
+    "wpackagist-plugin/akismet": "4.1.5",
+    "wpackagist-plugin/amp":"1.2.1",
+    "wpackagist-plugin/classic-editor": "1.5",
+    "wpackagist-plugin/duplicate-post": "3.2.4",
+    "wpackagist-plugin/litespeed-cache": "4.5.0.1",
+    "wpackagist-plugin/ninja-forms": "3.6.7",
+    "wpackagist-plugin/post-types-order":"1.9.4.3",
+    "wpackagist-plugin/redirection":"4.7.2",
+    "wpackagist-plugin/svg-support": "2.3.18",
+    "wpackagist-plugin/wordfence": "7.4.7",
+    "wpackagist-plugin/wordpress-seo": "14.1"
+  },
+  "extra": {
+    "installer-paths": {
+      "public_html/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "public_html/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "public_html/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "public_html/admin"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf public_html/admin/wp-content/themes"
+    ],
+    "post-update-cmd": [
+      "rm -rf public_html/admin/wp-content/themes"
+    ]
+  }
+}
